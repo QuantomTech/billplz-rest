@@ -1,0 +1,37 @@
+{
+  "name": "billplz-rest",
+  "version": "1.0.0",
+  "private": false,
+  "description": "A higher-level wrapper around the BillPlz API.",
+  "main": "./dist/index.ts",
+  "scripts": {
+    "build": "tsc -b -v"
+  },
+  "keywords": [
+    "billplz",
+    "typescript",
+    "rest"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/QuantomTech/billplz-rest.git"
+  },
+  "author": "HakamRaza",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/QuantomTech/billplz-rest/issues"
+  },
+  "homepage": "https://github.com/QuantomTech/billplz-rest#readme",
+  "lint-staged": {
+    "*.ts": [
+      "prettier --write"
+    ],
+    "package.json": [
+      "sort-package-json"
+    ]
+  },
+  "devDependencies": {
+    "@types/node": "*",
+    "typescript": "*"
+  }
+}

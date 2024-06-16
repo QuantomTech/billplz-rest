@@ -1,0 +1,24 @@
+# source
+packages/**/e2e/**
+packages/**/lib/**
+.idea/
+coverage
+
+# config
+tsconfig.json
+tsconfig.build.json
+tsconfig.spec.json
+.prettierignore
+.prettierrc
+docker-compose.yml
+renovate.json
+cc-test-reporter
+lerna.json
+.eslintignore
+.eslintrc.js
+.commitlintrc.json
+
+# misc
+.circleci/
+.github/
+yarn.lock
