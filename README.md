@@ -1,12 +1,12 @@
-# billplz-api
-`billplz-api` provides a minimal higher-level wrapper around [BillPlz's API.](https://www.billplz-sandbox.com/api).
+# billplz-rest
+`billplz-rest` provides a minimal higher-level wrapper around [BillPlz's API.](https://www.billplz-sandbox.com/api).
 Currently only support stable version API v3 with Typescript.
 
 ## Installation
-`billplz-api` is available from [npm](https://www.npmjs.com/package/billplz-api).
+`billplz-rest` is available from [npm](https://www.npmjs.com/package/billplz-rest).
 
 ```shell
-npm i billplz-api
+npm i billplz-rest
 ```
 
 ### Setup
@@ -20,7 +20,7 @@ npm i billplz-api
 ```javascript
 // Get Collection By Collection ID
 
-import Billpz from 'billplz-api'
+import Billpz from 'billplz-rest'
 
 const GetCollectionById = async () => {
 
@@ -47,8 +47,8 @@ GetCollectionById();
 ```javascript
 // Verify webhook
 
-import Billpz from 'billplz-api'
-import { BplzCallback } from './node_modules/billplz-api/dist/lib/type'
+import Billpz from 'billplz-rest'
+import { BplzCallback } from './node_modules/billplz-rest/dist/lib/type'
 
 const VerifyCallback = async (payload: BplzCallback) => {
 
