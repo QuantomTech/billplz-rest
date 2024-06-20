@@ -1,6 +1,6 @@
 {
   "name": "billplz-rest",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "private": false,
   "description": "A higher-level wrapper around the BillPlz API.",
   "main": "./dist/index.ts",
