@@ -29,22 +29,22 @@ export type BplzCallback = {
 }
 
 
-//------------------------------ Response JSON ----------------------------------
+//------------------------------ Modules ----------------------------------
 
 //------- Collection
 
 export type BplzCreateCollectionRes = BplzJsonRes & {
-    id: string                    // ID that represents a collection.
-    title: string                 // The collection's title in string format.
+    id: string                          // ID that represents a collection.
+    title: string                       // The collection's title in string format.
     logo: {
-        thumb_url: string         // The thumb dimension's (180x180) URL.
-        avatar_url: string        // The avatar dimension's (40x40) URL.
+        thumb_url: string               // The thumb dimension's (180x180) URL.
+        avatar_url: string              // The avatar dimension's (40x40) URL.
     },
     split_payment: {
-        email: string,            // The 1st recipient's email. It only returns the 1st recipient eventhough there is multiple recipients being set. If you wish to have 2 recipients, please refer to V4 Create a Collection.
-        fixed_cut: number,        // The 1st recipient's fixed cut in smallest and positive currency unit.
-        variable_cut: null,       // The 1st recipient's percentage cut in positive integer format.
-        split_header: true        // Boolean value. All bill and receipt templates will show split rule recipient's infographic if this was set to true.
+        email: string,                  // The 1st recipient's email. It only returns the 1st recipient eventhough there is multiple recipients being set. If you wish to have 2 recipients, please refer to V4 Create a Collection.
+        fixed_cut: number,              // The 1st recipient's fixed cut in smallest and positive currency unit.
+        variable_cut: number | null,    // The 1st recipient's percentage cut in positive integer format.
+        split_header: boolean           // Boolean value. All bill and receipt templates will show split rule recipient's infographic if this was set to true.
     }
 }
 
@@ -127,7 +127,7 @@ export type BplzBillRes = BplzJsonRes & {
     reference_1: string                 // Value for reference_1_label (Max of 120 characters).
     reference_2_label: string           // Label #2 to reconcile payments (Max of 20 characters). Default value is Reference 2.
     reference_2: string                 // Value for reference_2_label (Max of 120 characters).
-    paid: false,                        // Boolean value to tell if a bill has paid. It will return false for due bills; true for paid bills.
+    paid: boolean,                      // Boolean value to tell if a bill has paid. It will return false for due bills; true for paid bills.
     paid_amount: number,                // In cents
     name: string,                       // Payer name
     mobile: string,                     // Payer mobile no
