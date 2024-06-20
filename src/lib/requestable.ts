@@ -22,7 +22,7 @@ class Requestable {
 			options.body = JSON.stringify(payload);
 		}
 
-		console.info({ url: this.baseUrl + prefix, method, options });
+		// console.info({ url: this.baseUrl + prefix, method, options });
 
 		try {
 			const res = await fetch(this.baseUrl + prefix, options);
