@@ -33,7 +33,7 @@ class Collection_V3 extends Requestable {
 	getIndex(dto?: {
 		page?: number;
 		status?: 'active' | 'inactive';
-	}): Promise<BplzGetCollectionIndexRes | null> {
+	}): Promise<BplzGetCollectionIndexRes> {
 
 		let params: Record <string, any> = {}
 
@@ -48,7 +48,7 @@ class Collection_V3 extends Requestable {
 	 *
 	 * Use this API to query your collection record.
 	 */
-	getById(collectionId: string): Promise<BplzGetCollectionRes | null> {
+	getById(collectionId: string): Promise<BplzGetCollectionRes> {
 		return this._request('GET', `${this.prefix}/${collectionId}`);
 	}
 
@@ -72,7 +72,7 @@ class Collection_V3 extends Requestable {
 			variable_cut: null | number;
 			split_header: boolean;
 		};
-	}): Promise<BplzCreateCollectionRes | null> {
+	}): Promise<BplzCreateCollectionRes> {
 		
 		let payload: Record <string, any> = {
 			title: dto.title
@@ -91,7 +91,7 @@ class Collection_V3 extends Requestable {
 	 * this API. The API will respond with error messages if the
 	 * collection cannot be deactivated.
 	 */
-	deactivate(collectionId: string): Promise<BplzJsonRes | null> {
+	deactivate(collectionId: string): Promise<BplzJsonRes> {
 		return this._request('POST', `${this.prefix}/${collectionId}/deactivate`);
 	}
 
@@ -102,7 +102,7 @@ class Collection_V3 extends Requestable {
 	 * via this API. The API will respond with error messages
 	 * if the collection cannot be activated.
 	 */
-	activate(collectionId: string): Promise<BplzJsonRes | null> {
+	activate(collectionId: string): Promise<BplzJsonRes> {
 		return this._request('POST', `${this.prefix}/${collectionId}/activate`);
 	}
 
@@ -114,7 +114,7 @@ class Collection_V3 extends Requestable {
 	 */
 	getPaymentMethods(
 		collectionId: string
-	): Promise<BplzPaymentMethodRes | null> {
+	): Promise<BplzPaymentMethodRes> {
 		return this._request('GET', `${this.prefix}/${collectionId}/payment_methods`);
 	}
 
@@ -147,7 +147,7 @@ class Collection_V3 extends Requestable {
 			| 'twoctwopipp'
 			| 'twoctwopwallet'
 		>;
-	}): Promise<BplzPaymentMethodRes | null> {
+	}): Promise<BplzPaymentMethodRes> {
 
 		let methods = dto.methodCodes.map((element) => {
 			return { codes: element };

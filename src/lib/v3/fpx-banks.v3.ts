@@ -23,7 +23,7 @@ export default class FpxBank_V3 extends Requestable {
      * you looking for a complete payment gateways' bank code,
      * please use API#get-payment-gateways instead.
      */
-    getIndex(): Promise<FpxBankRes | null> {
+    getIndex(): Promise<FpxBankRes> {
         return this._request('GET', `${this.prefix}`);
     }
 }

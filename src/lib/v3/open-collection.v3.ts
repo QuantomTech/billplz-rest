@@ -74,7 +74,7 @@ export default class OpenCollection_V3 extends Requestable {
 			variable_cut: null | number;// Percentage in positive integer format that is going in your account. This field is required if split_payment[fixed_cut] is not present
 			split_header: boolean;		// Boolean value. All bill and receipt templates will show split rule recipient's infographic if this was set to true.
 		}
-	}): Promise<BplzCreateOpenCollectionRes | null> {
+	}): Promise<BplzCreateOpenCollectionRes> {
 
 		let payload: Record<string, any> = {
 			title: dto.title,
