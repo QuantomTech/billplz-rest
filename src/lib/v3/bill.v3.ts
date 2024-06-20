@@ -46,7 +46,7 @@ export default class Bill_V3 extends Requestable {
         refOne?: string;
         refTwoLabel?: string;
         refTwo?: string;
-    }): Promise<BplzBillRes | null> {
+    }): Promise<BplzBillRes> {
 
         let payload: Record<string, any> = {
             collection_id: dto.collection_id,
@@ -75,7 +75,7 @@ export default class Bill_V3 extends Requestable {
      * At any given time, you can request a bill to check
      * on the status. It will return the bill object.
      */
-    getById(billId: string): Promise<BplzBillRes | null> {
+    getById(billId: string): Promise<BplzBillRes> {
         return this._request('GET', `${this.prefix}/${billId}`);
     }
 
@@ -89,7 +89,7 @@ export default class Bill_V3 extends Requestable {
      * After 15 minutes of bill creation, get bill status and delete if
      * bill is still due.
      */
-    delete(billId: string): Promise<BplzJsonRes | null> {
+    delete(billId: string): Promise<BplzJsonRes> {
         return this._request('DELETE', `${this.prefix}/${billId}`);
     }
 
@@ -106,7 +106,7 @@ export default class Bill_V3 extends Requestable {
         billId: string;
         page?: number;
         status?: 'pending' | 'completed' | 'failed';
-    }): Promise<BplzTransactionRes | null> {
+    }): Promise<BplzTransactionRes> {
 
         let params: Record<string, any> = {}
 
