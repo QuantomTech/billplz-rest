@@ -7,7 +7,7 @@
 * Refactor README for better documentation
 * Comment out `console.info` at requestable.ts
 
-## 1.0.0 - 2024/07/16
+## 1.0.0 - 2024/06/16
 First package released and published.
 
 * Modularized codebase
